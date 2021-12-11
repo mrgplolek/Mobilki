@@ -10,7 +10,7 @@ import pl.prescriptionapp.restapi.repository.UserRepository;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-12-11T12:47:19+0100",
+    date = "2021-12-11T14:58:30+0100",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.13 (Amazon.com Inc.)"
 )
 @Component

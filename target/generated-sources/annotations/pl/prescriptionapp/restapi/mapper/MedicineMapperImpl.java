@@ -8,7 +8,7 @@ import pl.prescriptionapp.restapi.entity.MedicineEntity.MedicineEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-12-10T19:58:10+0100",
+    date = "2021-12-11T14:58:30+0100",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.13 (Amazon.com Inc.)"
 )
 @Component
@@ -22,6 +22,7 @@ public class MedicineMapperImpl implements MedicineMapper {
 
         MedicineEntityBuilder medicineEntity = MedicineEntity.builder();
 
+        medicineEntity.id( medicineDto.getId() );
         medicineEntity.name( medicineDto.getName() );
         medicineEntity.manufacturer( medicineDto.getManufacturer() );
         medicineEntity.type( medicineDto.getType() );

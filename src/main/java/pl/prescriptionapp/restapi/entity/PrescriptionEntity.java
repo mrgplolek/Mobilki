@@ -1,5 +1,6 @@
 package pl.prescriptionapp.restapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,6 +39,7 @@ public class PrescriptionEntity implements Serializable {
     private Integer status;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
 

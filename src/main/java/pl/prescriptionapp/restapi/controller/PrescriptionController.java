@@ -15,12 +15,11 @@ public class PrescriptionController {
     private final PrescriptionService prescriptionService;
 
     @PostMapping
-    @ResponseBody
     public ResponseEntity<?> createPrescription(@RequestBody PrescriptionDto prescriptionDto) {
         return prescriptionService.postPrescription(prescriptionDto);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping
     public ResponseEntity<?> updatePrescription(@RequestBody PrescriptionDto prescriptionDto){
         return prescriptionService.updatePrescription(prescriptionDto);
     }
@@ -35,8 +34,8 @@ public class PrescriptionController {
         return prescriptionService.getPrescriptionsByUser(userId);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deletePrescriptionById(@PathVariable Long id){
+    @DeleteMapping
+    public ResponseEntity<?> deletePrescriptionById(@RequestParam Long id){
         return prescriptionService.deletePrescription(id);
     }
 }

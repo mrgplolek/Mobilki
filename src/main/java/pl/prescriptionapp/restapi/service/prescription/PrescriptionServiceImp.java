@@ -50,7 +50,7 @@ public class PrescriptionServiceImp implements PrescriptionService {
 
     @Override
     public ResponseEntity<?> getPrescription(Long id){
-        PrescriptionEntity prescriptionEntity = prescriptionRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        PrescriptionEntity prescriptionEntity = prescriptionRepository.findById(id).get();
         return new ResponseEntity<>(prescriptionEntity, HttpStatus.FOUND);
     }
 
