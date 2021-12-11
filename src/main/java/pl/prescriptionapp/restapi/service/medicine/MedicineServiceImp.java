@@ -24,7 +24,7 @@ public class MedicineServiceImp implements MedicineService{
         MedicineEntity medicineEntity = medicineMapper.medicineDtoToMedicineEntity(medicineDto);
 
         medicineRepository.save(medicineEntity);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(medicineEntity ,HttpStatus.OK);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class MedicineServiceImp implements MedicineService{
             medicineEntity.setManufacturer(medicineDto.getManufacturer());
         }
         medicineRepository.save(medicineEntity);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(medicineEntity, HttpStatus.OK);
     }
 
     @Override
